@@ -31,7 +31,7 @@ const Main = () => {
       y: yPos,
       background: "#4B5563",
       mount: linkContent,
-      class: ["no-min", "no-max", "no-full", "no-resize", "no-move"],
+      class: ["no-min", "no-max", "no-full", "no-resize", "no-close", "no-move"],
       onfocus: function () {
         this.setBackground("#4B5563");
       },
@@ -125,7 +125,7 @@ const Main = () => {
 
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
-      linkBox.close();
+      // linkBox.close();
     };
   }, []);
 
@@ -247,11 +247,11 @@ const Main = () => {
             contact-me:$<span class="animate-blink">|</span>
           </h2>
           <main>
-            <div className="mx-8 mt-3">
+            <div className="mx-4 md:mx-8 mt-3">
               <p>you can contact me at the email and phone number below:</p>
               <ul>
                 <li className="py-2">
-                  <div className="inline-block px-4">
+                  <div className="inline-block px-2 md:px-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24px"
@@ -266,7 +266,7 @@ const Main = () => {
                   +1 (905) 462-1566
                 </li>
                 <li>
-                  <div className="inline-block px-4">
+                  <div className="inline-block px-2 md:px-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24px"
@@ -293,7 +293,7 @@ const Main = () => {
             my-projects:$<span class="animate-blink">|</span>
           </h2>
           <main className="text-left divide-y-2 divide-gray-200 divide-solid">
-            <div className="my-3 mx-8">
+            <div className="my-3 mx-4 md:mx-8">
               <div className="flex justify-between">
                 <div>
                   <h4 className="text-xl">Course Management System</h4>
@@ -347,7 +347,7 @@ const Main = () => {
             </div>
             {/* start of second project */}
             <div>
-              <div className="mx-8 mb-3">
+              <div className="mx-4 md:mx-8 mb-3">
                 <div class="my-3">
                   <div className="flex justify-between">
                     <div>
@@ -406,7 +406,7 @@ const Main = () => {
             </div>
             {/* start of third project */}
             <div>
-              <div className="mx-8 mb-3">
+              <div className="mx-4 md:mx-8 mb-3">
                 <div className="my-3">
                   <div class="flex justify-between">
                     <div>
@@ -450,7 +450,7 @@ const Main = () => {
             </div>
             {/* start of fourth project */}
             <div>
-              <div className="mx-8 mb-3">
+              <div className="mx-4 md:mx-8 mb-3">
                 <div class="my-3">
                   <div className="flex justify-between">
                     <div>
