@@ -8,6 +8,9 @@ import WinBox from "../components/winbox.js";
 const Main = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
+  let aboutOpen = false;
+  let contactOpen = false;
+  let projectOpen = false;
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
@@ -46,6 +49,8 @@ const Main = () => {
     return linkBox;
   }
   function initAboutWindow() {
+    if(aboutOpen) return;
+    aboutOpen = true;
     const aboutContent = document.getElementById("about-content");
     const aboutBox = new WinBox({
       title: "about-me",
@@ -62,6 +67,9 @@ const Main = () => {
       onblur: function () {
         this.setBackground("#374151");
       },
+      onclose: function () {
+        aboutOpen = false;
+      }
     });
 
     aboutBox.body.classList.add("bg-gradient-to-t");
@@ -70,6 +78,8 @@ const Main = () => {
     return aboutBox;
   }
   function initContactWindow() {
+    if(contactOpen) return;
+    contactOpen = true;
     const contactContent = document.getElementById("contact-content");
     const contactBox = new WinBox({
       title: "contact-me",
@@ -86,6 +96,9 @@ const Main = () => {
       onblur: function () {
         this.setBackground("#374151");
       },
+      onclose: function() {
+        contactOpen = false;
+      }
     });
 
     contactBox.body.classList.add("bg-gradient-to-t");
@@ -95,6 +108,8 @@ const Main = () => {
   }
 
   function initProjectWindow() {
+    if(projectOpen) return;
+    projectOpen = true;
     const projectContent = document.getElementById("project-content");
     const projectBox = new WinBox({
       title: "my-projects",
@@ -111,6 +126,9 @@ const Main = () => {
       onblur: function () {
         this.setBackground("#374151");
       },
+      onclose: function () {
+        projectOpen = false;
+      }
     });
 
     projectBox.body.classList.add("bg-gradient-to-t");
